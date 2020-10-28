@@ -15,9 +15,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@chainlink/contracts": "^0.0.8",
+    "@chainlink/contracts": "0.0.8",
     "@openzeppelin/contracts": "^3.1.0",
-    "@truffle/hdwallet-provider": "^1.0.40"
+    "@truffle/hdwallet-provider": "^1.0.40",
+    "truffle-plugin-verify": "^0.4.0"
   },
   "devDependencies": {
     "@chainlink/belt": "^0.0.1",
