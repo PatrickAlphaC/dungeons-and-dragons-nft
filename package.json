@@ -17,8 +17,7 @@
   "dependencies": {
     "@chainlink/contracts": "0.0.8",
     "@openzeppelin/contracts": "^3.1.0",
-    "@truffle/hdwallet-provider": "^1.0.40",
-    "truffle-plugin-verify": "^0.4.0"
+    "@truffle/hdwallet-provider": "^1.0.40"
   },
   "devDependencies": {
     "@chainlink/belt": "^0.0.1",
@@ -27,6 +26,7 @@
     "chai": "^4.2.0",
     "depcheck": "^0.9.1",
     "solhint": "^2.1.0",
-    "truffle": "^5.1.5"
+    "truffle": "^5.1.5",
+    "truffle-plugin-verify": "^0.4.1"
   }
 }

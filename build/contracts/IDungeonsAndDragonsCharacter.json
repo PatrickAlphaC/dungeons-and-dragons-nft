@@ -1,5 +1,5 @@
 {
-  "contractName": "IBattles",
+  "contractName": "IDungeonsAndDragonsCharacter",
   "abi": [
     {
       "inputs": [
@@ -7,40 +7,39 @@
           "internalType": "uint256",
           "name": "tokenId",
           "type": "uint256"
-        }
-      ],
-      "name": "requestBattleResults",
-      "outputs": [
+        },
         {
-          "internalType": "bytes32",
-          "name": "requestId",
-          "type": "bytes32"
+          "internalType": "uint256",
+          "name": "experience",
+          "type": "uint256"
         }
       ],
+      "name": "updateExperience",
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"requestBattleResults\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/patrick/code/dynamic-nft/contracts/IBattles.sol\":\"IBattles\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/patrick/code/dynamic-nft/contracts/IBattles.sol\":{\"keccak256\":\"0x598b467f8fb734da058b97e5f062f58636edc5b6ca5a41f857210b1394d6e659\",\"urls\":[\"bzz-raw://6d1c7a74e6533cb6235a4b49a0aeb199a93cef79de2b2a7fdb16c4abb5f83df5\",\"dweb:/ipfs/QmQLAqsmRoXKxnPooGFsof3TeTUhuRS5AXMEXe5dndkXhA\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"experience\",\"type\":\"uint256\"}],\"name\":\"updateExperience\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol\":\"IDungeonsAndDragonsCharacter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol\":{\"keccak256\":\"0xa1863be568cbfd668de886c126d8648a4b457740ef8a6df5cb5e8ba7a7b93a11\",\"urls\":[\"bzz-raw://74e78b15c6b7a8f5d45e0c620a07cf7d655881250ad6f386573f4d1cb1b368f9\",\"dweb:/ipfs/QmVXwY4GWQ5E9yUhTZKMqRNEaSvtowH4PMt3EQAcav682D\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.6;\n\ninterface IBattles {\n    function requestBattleResults(uint256 tokenId)\n        external\n        returns (bytes32 requestId);\n}\n",
-  "sourcePath": "/Users/patrick/code/dynamic-nft/contracts/IBattles.sol",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.6;\n\ninterface IDungeonsAndDragonsCharacter {\n    function updateExperience(uint256 tokenId, uint256 experience) external;\n}\n",
+  "sourcePath": "/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol",
   "ast": {
-    "absolutePath": "/Users/patrick/code/dynamic-nft/contracts/IBattles.sol",
+    "absolutePath": "/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol",
     "exportedSymbols": {
-      "IBattles": [
-        661
+      "IDungeonsAndDragonsCharacter": [
+        671
       ]
     },
-    "id": 662,
+    "id": 672,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 653,
+        "id": 663,
         "literals": [
           "solidity",
           "^",
@@ -48,7 +47,7 @@
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:2"
+        "src": "32:23:3"
       },
       {
         "abstract": false,
@@ -57,37 +56,37 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 661,
+        "id": 671,
         "linearizedBaseContracts": [
-          661
+          671
         ],
-        "name": "IBattles",
+        "name": "IDungeonsAndDragonsCharacter",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
             "documentation": null,
-            "functionSelector": "545bf1f3",
-            "id": 660,
+            "functionSelector": "c5ccb492",
+            "id": 670,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "requestBattleResults",
+            "name": "updateExperience",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 656,
+              "id": 668,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 655,
+                  "id": 665,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 660,
-                  "src": "112:15:2",
+                  "scope": 670,
+                  "src": "128:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -95,10 +94,38 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 654,
+                    "id": 664,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "112:7:2",
+                    "src": "128:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 667,
+                  "mutability": "mutable",
+                  "name": "experience",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 670,
+                  "src": "145:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 666,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -108,68 +135,39 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "111:17:2"
+              "src": "127:37:3"
             },
             "returnParameters": {
-              "id": 659,
+              "id": 669,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 658,
-                  "mutability": "mutable",
-                  "name": "requestId",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 660,
-                  "src": "163:17:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 657,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "163:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "162:19:2"
+              "parameters": [],
+              "src": "173:0:3"
             },
-            "scope": 661,
-            "src": "82:100:2",
+            "scope": 671,
+            "src": "102:72:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 662,
-        "src": "57:127:2"
+        "scope": 672,
+        "src": "57:119:3"
       }
     ],
-    "src": "32:153:2"
+    "src": "32:145:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/patrick/code/dynamic-nft/contracts/IBattles.sol",
+    "absolutePath": "/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol",
     "exportedSymbols": {
-      "IBattles": [
-        661
+      "IDungeonsAndDragonsCharacter": [
+        671
       ]
     },
-    "id": 662,
+    "id": 672,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 653,
+        "id": 663,
         "literals": [
           "solidity",
           "^",
@@ -177,7 +175,7 @@
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:2"
+        "src": "32:23:3"
       },
       {
         "abstract": false,
@@ -186,37 +184,37 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 661,
+        "id": 671,
         "linearizedBaseContracts": [
-          661
+          671
         ],
-        "name": "IBattles",
+        "name": "IDungeonsAndDragonsCharacter",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
             "documentation": null,
-            "functionSelector": "545bf1f3",
-            "id": 660,
+            "functionSelector": "c5ccb492",
+            "id": 670,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
-            "name": "requestBattleResults",
+            "name": "updateExperience",
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 656,
+              "id": 668,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 655,
+                  "id": 665,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 660,
-                  "src": "112:15:2",
+                  "scope": 670,
+                  "src": "128:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -224,10 +222,38 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 654,
+                    "id": 664,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "112:7:2",
+                    "src": "128:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 667,
+                  "mutability": "mutable",
+                  "name": "experience",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 670,
+                  "src": "145:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 666,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -237,55 +263,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "111:17:2"
+              "src": "127:37:3"
             },
             "returnParameters": {
-              "id": 659,
+              "id": 669,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 658,
-                  "mutability": "mutable",
-                  "name": "requestId",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 660,
-                  "src": "163:17:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 657,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "163:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "162:19:2"
+              "parameters": [],
+              "src": "173:0:3"
             },
-            "scope": 661,
-            "src": "82:100:2",
+            "scope": 671,
+            "src": "102:72:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 662,
-        "src": "57:127:2"
+        "scope": 672,
+        "src": "57:119:3"
       }
     ],
-    "src": "32:153:2"
+    "src": "32:145:3"
   },
   "compiler": {
     "name": "solc",
@@ -293,7 +290,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-28T02:24:26.240Z",
+  "updatedAt": "2020-10-28T01:59:31.757Z",
   "devdoc": {
     "methods": {}
   },

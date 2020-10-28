@@ -2,9 +2,13 @@ const DungeonsAndDragons = artifacts.require('DungeonsAndDragonsCharacter')
 const Battles = artifacts.require('Battles')
 
 module.exports = async (deployer, network, [defaultAccount]) => {
-  await deployer.deploy(DungeonsAndDragons)
-  let dnd = await DungeonsAndDragons.deployed()
-  await deployer.deploy(Battles, dnd.address)
-  let battles = await Battles.deployed()
-  await dnd.setBattlesContract(battles.address)
+  // hard coded for rinkeby
+  if (network.startsWith('rinkeby')) {
+    await deployer.deploy(DungeonsAndDragons)
+    let dnd = await DungeonsAndDragons.deployed()
+  } else {
+    console.log("Right now only rinkeby works! Please change your network to Rinkeby")
+    await deployer.deploy(DungeonsAndDragons)
+    let dnd = await DungeonsAndDragons.deployed()
+  }
 }

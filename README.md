@@ -1,99 +1,70 @@
-# Chainlink Truffle Box
+# Chainlink Random Character Creation
 
-Implementation of a [Chainlink requesting contract](https://docs.chain.link/docs/create-a-chainlinked-project).
+This repo is a starting point for creating:
+1. NFTs built with provable RNG using the [Chainlink VRF](https://docs.chain.link/docs/get-a-random-number)
+2. Create dynamic NFTs that change based on real world data. [By using decentralized oracles to get data.](https://docs.chain.link/docs/make-a-http-get-request)
 
-## Requirements
+We will easily create our own NFT on the Rinkeby Chain. We can edit the name of the character in the `generate-character.js` script. Right now, the character defaults to "Garfield the Chainlink Warrior". 
 
-- NPM
+This will create a character with 6 attributes from 0 - 24:
+ -   uint256 strength;
+ -   uint256 dexterity;
+ -   uint256 constitution;
+ -   uint256 intelligence;
+ -   uint256 wisdom;
+ -   uint256 charisma;
 
-## Installation
+And then:
+ -   uint256 experience;
+ -   string name;
 
-Package installation should have occurred for you during the Truffle Box setup. However, if you add dependencies, you'll need to add them to the project by running:
+## Quickstart
+
+Right now this repo only works with rinkeby. Run the following.
+
+### Setup Environment Variables
+You'll need a `MNEMONIC` and a rinkeby `RPC_URL` environment variable. Your `MNEMONIC` is your seed phrase of your wallet. You can find an `RPC_URL` from node provider services like [Infura](https://infura.io/)
+
+Then, either set them in a `bash_profile` file or export them into your terminal like:
 
 ```bash
+export MNEMONIC='cat dog frog....'
+export RPC_URL='www.infura.io/asdfadsfafdadf'
+```
+
+Then you can get started with:
+
+### Clone The Repo and migrate
+```
+git clone https://github.com/PatrickAlphaC/dynamic-nft
+cd dynamic-nft
 npm install
+truffle migrate --reset --network rinkeby
 ```
 
-Or
+This will deploy your D&D NFT!
+
+### Generate a character
+You can now try it out:
+```bash
+truffle exec scripts/fund-contract.js --network rinkeby
+truffle exec scripts/generate-character.js --network rinkeby
+truffle exec scripts/get-character.js --network rinkeby
+```
+
+This will create a new character with random stats! 
+Depending how often you deploy, you can pick which character by changing the `dnd.getCharacterOverView(1)` command in `get-character.js` to swap the `0` out with whatever `tokenId` of the character you like. 
+
+This will give you the overview of your NFT. You'll see `BN` since the call returns big numbers, you can cast them to ints to see what they are.... Or you could go one step farther
+
+### See it on etherscan or onclickdapp
+
+You can get an [Etherscan API key](https://etherscan.io/apis) for free and interact with the NFTs on chain.
 
 ```bash
-yarn install
+truffle run verify DungeonsAndDragonsCharacter --network rinkeby --license MIT
 ```
 
-## Test
+This will verify and publish your contract.
 
-```bash
-npm test
-```
-
-## Deploy
-
-If needed, edit the `truffle-config.js` config file to set the desired network to a different port. It assumes any network is running the RPC port on 8545.
-
-```bash
-npm run migrate:dev
-```
-
-For deploying to live networks, Truffle will use `truffle-hdwallet-provider` for your mnemonic and an RPC URL. Set your environment variables `$RPC_URL` and `$MNEMONIC` before running:
-
-```bash
-npm run migrate:live
-```
-
-## Helper Scripts
-
-There are 3 helper scripts provided with this box in the scripts directory:
-
-- `fund-contract.js`
-- `request-data.js`
-- `read-contract.js`
-
-They can be used by calling them from `npx truffle exec`, for example:
-
-```bash
-npx truffle exec scripts/fund-contract.js --network live
-```
-
-The CLI will output something similar to the following:
-
-```
-Using network 'live'.
-
-Funding contract: 0x972DB80842Fdaf6015d80954949dBE0A1700705E
-0xd81fcf7bfaf8660149041c823e843f0b2409137a1809a0319d26db9ceaeef650
-Truffle v5.0.25 (core: 5.0.25)
-Node v10.16.3
-```
-
-In the `request-data.js` script, example parameters are provided for you. You can change the oracle address, Job ID, and parameters based on the information available on [our documentation](https://docs.chain.link/docs/testnet-oracles).
-
-```bash
-npx truffle exec scripts/request-data.js --network live
-```
-
-This creates a request and will return the transaction ID, for example:
-
-```
-Using network 'live'.
-
-Creating request on contract: 0x972DB80842Fdaf6015d80954949dBE0A1700705E
-0x828f256109f22087b0804a4d1a5c25e8ce9e5ac4bbc777b5715f5f9e5b181a4b
-Truffle v5.0.25 (core: 5.0.25)
-Node v10.16.3
-```
-
-After creating a request on a live network, you will want to wait 3 blocks for the Chainlink node to respond. Then call the `read-contract.js` script to read the contract's state.
-
-```bash
-npx truffle exec scripts/read-contract.js --network live
-```
-
-Once the oracle has responded, you will receive a value similar to the one below:
-
-```
-Using network 'live'.
-
-21568
-Truffle v5.0.25 (core: 5.0.25)
-Node v10.16.3
-```
+Otherwise, you can use [oneclickdapp](https://oneclickdapp.com/) and just add the contract address and ABI. You can find the ABI in the `build/contracts` folder. Just remember it's not the whole file that is the ABI, just the section that says `ABI`.

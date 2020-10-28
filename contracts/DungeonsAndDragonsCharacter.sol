@@ -2,20 +2,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.6;
 
-//https://oneclickdapp.com/boxer-santana/
-
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
-import "./IBattles.sol";
 
 contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
     using SafeMath for uint256;
     using Strings for string;
-
-    bool battlesSet = false;
-    address public battlesContract;
 
     bytes32 internal keyHash;
     uint256 internal fee;
@@ -55,20 +49,6 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
     {
         keyHash = 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311;
         fee = 0.1 * 10**18; // 0.1 LINK
-    }
-
-    function setBattlesContract(address _battles) external onlyOwner {
-        require(
-            battlesSet == false,
-            "The battles contract can only be set once"
-        );
-        battlesContract = _battles;
-        battlesSet = true;
-    }
-
-    modifier onlyBattlesContract() {
-        require(msg.sender == battlesContract); // If it is incorrect here, it reverts.
-        _; // Otherwise, it continues.
     }
 
     function requestNewRandomCharacter(
@@ -112,32 +92,6 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
             )
         );
         _safeMint(requestToSender[requestId], newId);
-    }
-
-    /**
-     * this is hardcoded and centralized for now
-     * but you'd want to call a network of chainlink nodes
-     */
-    function requestBattleResults(uint256 tokenId)
-        public
-        returns (bytes32 requestId)
-    {
-        //solhint-disable-next-line max-line-length
-        require(
-            _isApprovedOrOwner(_msgSender(), tokenId),
-            "ERC721: transfer caller is not owner nor approved"
-        );
-        require(battlesSet == true, "No battles contract set yet!");
-        IBattles(battlesContract).requestBattleResults(tokenId);
-    }
-
-    function updateExperience(uint256 tokenId, uint256 experience)
-        external
-        onlyBattlesContract
-    {
-        characters[tokenId].experience =
-            characters[tokenId].experience +
-            experience;
     }
 
     function getLevel(uint256 tokenId) public view returns (uint256) {
@@ -194,4 +148,22 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
             z = (x / z + z) / 2;
         }
     }
+
+
+
+    // // You'll want to change view/internal
+    // function requestBattleResults() internal view returns(uint){
+    //     // Add your function here!
+    //     // https://docs.chain.link/docs/make-a-http-get-request
+    // }
+
+    // function train() internal view returns(uint){
+    //     // Add your fucntion here!
+    //     // https://docs.chain.link/docs/get-a-random-number
+    // }
+
+    // function getPaid() internal view returns(uint){
+    //     // Add your function here!
+    //     // https://docs.chain.link/docs/get-the-latest-price
+    // }
 }
