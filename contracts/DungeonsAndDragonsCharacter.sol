@@ -148,22 +148,4 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
             z = (x / z + z) / 2;
         }
     }
-
-
-
-    // // You'll want to change view/internal
-    // function requestBattleResults() internal view returns(uint){
-    //     // Add your function here!
-    //     // https://docs.chain.link/docs/make-a-http-get-request
-    // }
-
-    // function train() internal view returns(uint){
-    //     // Add your fucntion here!
-    //     // https://docs.chain.link/docs/get-a-random-number
-    // }
-
-    // function getPaid() internal view returns(uint){
-    //     // Add your function here!
-    //     // https://docs.chain.link/docs/get-the-latest-price
-    // }
 }
