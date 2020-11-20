@@ -11,6 +11,7 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
     using SafeMath for uint256;
     using Strings for string;
 
+    string public tokenURI; 
     bytes32 internal keyHash;
     uint256 internal fee;
     uint256 public randomResult;
@@ -49,6 +50,7 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
     {
         keyHash = 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311;
         fee = 0.1 * 10**18; // 0.1 LINK
+        tokenURI = "";
     }
 
     function requestNewRandomCharacter(
@@ -63,6 +65,14 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
         requestToCharacterName[requestId] = name;
         requestToSender[requestId] = msg.sender;
         return requestId;
+    }
+
+    function baseTokenURI() public view returns (string memory) {
+        return tokenURI;
+    }
+
+    function setTokenURI(string memory _tokenURI) public {
+        tokenURI = _tokenURI;
     }
 
     function fulfillRandomness(bytes32 requestId, uint256 randomNumber)
