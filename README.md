@@ -1,12 +1,13 @@
 # Chainlink Random Character Creation
 
 This repo is a starting point for creating:
-1. NFTs built with provable RNG using the [Chainlink VRF](https://docs.chain.link/docs/get-a-random-number)
+1. NFTs built with verifiable RNG using the [Chainlink VRF](https://docs.chain.link/docs/get-a-random-number)
 2. Create dynamic NFTs that change based on real world data. [By using decentralized oracles to get data.](https://docs.chain.link/docs/make-a-http-get-request)
+3. Adding your randomized NFTs to the [OpenSea Marketplace](https://opensea.io/)
 
-We will easily create our own NFT on the Rinkeby Chain. We can edit the name of the character in the [`generate-character.js`](./scripts/generate-character.js) script. Right now, the character defaults to "Garfield the Chainlink Warrior". 
+We will easily create our own NFT on the Rinkeby Chain. We can edit the name of the character in the [`generate-character.js`](./scripts/generate-character.js) script. 
 
-This will create a character with 6 attributes from 0 - 18:
+This will create a character with 6 attributes from 0 - 99:
  -   uint256 strength;
  -   uint256 dexterity;
  -   uint256 constitution;
