@@ -1,5 +1,4 @@
-const DungeonsAndDragons = artifacts.require('DungeonsAndDragonsCharacter')
-const Battles = artifacts.require('Battles')
+const DungeonsAndDragonsCharacter = artifacts.require('DungeonsAndDragonsCharacter')
 const LinkTokenInterface = artifacts.require('LinkTokenInterface')
 
 /*
@@ -13,18 +12,13 @@ const payment = process.env.TRUFFLE_CL_BOX_PAYMENT || '1000000000000000000'
 
 module.exports = async callback => {
   try {
-    const battles = await Battles.deployed()
-    const dnd = await DungeonsAndDragons.deployed()
-
-    const tokenAddress = await battles.getChainlinkToken()
+    const dnd = await DungeonsAndDragonsCharacter.deployed()
+    const tokenAddress = await dnd.LinkToken()
+    console.log("Chainlink Token Address: ", tokenAddress)
     const token = await LinkTokenInterface.at(tokenAddress)
-
-    console.log('Funding contract:', battles.address)
-    const tx = await token.transfer(battles.address, payment)
-    console.log(tx)
     console.log('Funding contract:', dnd.address)
-    const tx2 = await token.transfer(dnd.address, payment)
-    console.log(tx2)
+    const tx = await token.transfer(dnd.address, payment)
+    console.log(tx)
     callback(tx.tx)
   } catch (err) {
     callback(err)
