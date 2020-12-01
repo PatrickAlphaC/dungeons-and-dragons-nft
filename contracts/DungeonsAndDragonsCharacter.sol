@@ -113,6 +113,10 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
         return sqrt(characters[tokenId].experience);
     }
 
+    function getNumberOfCharacters() public view returns (uint256) {
+        return characters.length; 
+    }
+
     function getCharacterOverView(uint256 tokenId)
         public
         view
