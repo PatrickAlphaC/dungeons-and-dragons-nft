@@ -1,31 +1,31 @@
 {
-    "name": "Julian the Knight",
-    "description": "Defender against Flash Loan attacks, protector of #Defi protocols. Helping keep the smart contract kingdom secure, reliable, and safe. Also is an amazing artist. ",
+    "name": "The Chainlink Knight",
+    "description": "Defender against Flash Loan attacks, protector of #Defi protocols. Helping keep the smart contract kingdom secure, reliable, and safe. ",
     "image": "https://ipfs.io/ipfs/QmZGQA92ri1jfzSu61JRaNQXYg1bLuM7p8YT83DzFA2KLH?filename=Chainlink_Knight.png",
     "attributes": [
         {
             "trait_type": "Strength",
-            "value": 67
+            "value": 53
         },
         {
             "trait_type": "Dexterity",
-            "value": 94
+            "value": 54
         },
         {
             "trait_type": "Constitution",
-            "value": 34
+            "value": 2
         },
         {
             "trait_type": "Intelligence",
-            "value": 81
+            "value": 96
         },
         {
             "trait_type": "Wisdom",
-            "value": 45
+            "value": 94
         },
         {
             "trait_type": "Charisma",
-            "value": 4
+            "value": 99
         },
         {
             "trait_type": "Experience",

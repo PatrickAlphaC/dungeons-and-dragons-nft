@@ -1,31 +1,31 @@
 {
-    "name": "Sergey the Elf",
+    "name": "The Chainlink Elf",
     "description": "Inspiring, Based, Mythical, Oracle loving creature. Leading the new world and helping teach about superior digital agreements. Also is good with a bow!",
     "image": "https://ipfs.io/ipfs/QmTgqnhFBMkfT9s8PHKcdXBn1f5bG3Q5hmBaR4U6hoTvb1?filename=Chainlink_Elf.png",
     "attributes": [
         {
             "trait_type": "Strength",
-            "value": 63
+            "value": 84
         },
         {
             "trait_type": "Dexterity",
-            "value": 10
+            "value": 86
         },
         {
             "trait_type": "Constitution",
-            "value": 7
+            "value": 19
         },
         {
             "trait_type": "Intelligence",
-            "value": 6
+            "value": 79
         },
         {
             "trait_type": "Wisdom",
-            "value": 51
+            "value": 93
         },
         {
             "trait_type": "Charisma",
-            "value": 80
+            "value": 53
         },
         {
             "trait_type": "Experience",

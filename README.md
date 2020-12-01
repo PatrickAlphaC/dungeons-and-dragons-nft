@@ -66,6 +66,7 @@ This will give you the overview of your NFT. You'll see `BN` since the call retu
 You can get an [Etherscan API key](https://etherscan.io/apis) for free and interact with the NFTs on chain. Then set `ETHERSCAN_API_KEY ` as an environment variable.
 
 ```bash
+npm install truffle-plugin-verify
 truffle run verify DungeonsAndDragonsCharacter --network rinkeby --license MIT
 ```
 
@@ -114,6 +115,6 @@ Then we just run it like:
 truffle exec scripts/set-token-uri.js --network mainnet
 ```
 
-Now, we can get the address of our NFT and head on over to the opensea testnet marketplace to see if we did it correctly. If done correctly, it'll look [something like this](https://testnets.opensea.io/storefront/dungeonsanddragonscharacter-v6).
+Now, we can get the address of our NFT and head on over to the opensea testnet marketplace to see if we did it correctly. If done correctly, it'll look [something like this](https://testnets.opensea.io/storefront/dungeonsanddragonscharacter-v9).
 
 [Here is the link for adding your testnet NFT contract to be viewed on opensea.](https://testnets.opensea.io/get-listed/step-two)
