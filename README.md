@@ -115,6 +115,6 @@ Then we just run it like:
 truffle exec scripts/set-token-uri.js --network mainnet
 ```
 
-Now, we can get the address of our NFT and head on over to the opensea testnet marketplace to see if we did it correctly. If done correctly, it'll look [something like this](https://testnets.opensea.io/storefront/dungeonsanddragonscharacter-v9).
+Now, we can get the address of our NFT and head on over to the opensea testnet marketplace to see if we did it correctly. If done correctly, it'll look [something like this](https://testnets.opensea.io/assets/dungeonsanddragonscharacter-v9).
 
 [Here is the link for adding your testnet NFT contract to be viewed on opensea.](https://testnets.opensea.io/get-listed/step-two)
