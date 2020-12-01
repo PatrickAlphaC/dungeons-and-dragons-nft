@@ -14,8 +14,10 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
     bytes32 internal keyHash;
     uint256 internal fee;
     uint256 public randomResult;
-    address public VRFCoordinator = 0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B;
-    address public LinkToken = 0x01BE23585060835E02B77ef475b0Cc51aA1e0709;
+    address public VRFCoordinator;
+    // rinkeby: 0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B
+    address public LinkToken;
+    // rinkeby: 0x01BE23585060835E02B77ef475b0Cc51aA1e0709a
 
     struct Character {
         uint256 strength;
@@ -39,15 +41,17 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
      *
      * Network: Rinkeby
      * Chainlink VRF Coordinator address: 0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B
-     * LINK token address:                0xa36085f69e2889c224210f603d836748e7dc0088
+     * LINK token address:                0x01BE23585060835E02B77ef475b0Cc51aA1e0709
      * Key Hash: 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311
      */
-    constructor()
+    constructor(address _VRFCoordinator, address _LinkToken, bytes32 _keyhash)
         public
-        VRFConsumerBase(VRFCoordinator, LinkToken)
+        VRFConsumerBase(_VRFCoordinator, _LinkToken)
         ERC721("DungeonsAndDragonsCharacter", "D&D")
-    {
-        keyHash = 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311;
+    {   
+        VRFCoordinator = _VRFCoordinator;
+        LinkToken = _LinkToken;
+        keyHash = _keyhash;
         fee = 0.1 * 10**18; // 0.1 LINK
     }
 
@@ -65,18 +69,29 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
         return requestId;
     }
 
+    function getTokenURI(uint256 tokenId) public view returns (string memory) {
+        return tokenURI(tokenId);
+    }
+
+    function setTokenURI(uint256 tokenId, string memory _tokenURI) public {
+        require(
+            _isApprovedOrOwner(_msgSender(), tokenId),
+            "ERC721: transfer caller is not owner nor approved"
+        );
+        _setTokenURI(tokenId, _tokenURI);
+    }
+
     function fulfillRandomness(bytes32 requestId, uint256 randomNumber)
         internal
         override
     {
         uint256 newId = characters.length;
-        uint256 strength = ((randomNumber % 100) % 18);
-        uint256 dexterity = (((randomNumber % 10000) / 100) % 18);
-        uint256 constitution = (((randomNumber % 1000000) / 10000) % 18);
-        uint256 intelligence = (((randomNumber % 100000000) / 1000000) % 18);
-        uint256 wisdom = (((randomNumber % 10000000000) / 100000000) % 18);
-        uint256 charisma = (((randomNumber % 1000000000000) / 10000000000) %
-            18);
+        uint256 strength = (randomNumber % 100);
+        uint256 dexterity = ((randomNumber % 10000) / 100 );
+        uint256 constitution = ((randomNumber % 1000000) / 10000 );
+        uint256 intelligence = ((randomNumber % 100000000) / 1000000 );
+        uint256 wisdom = ((randomNumber % 10000000000) / 100000000 );
+        uint256 charisma = ((randomNumber % 1000000000000) / 10000000000);
         uint256 experience = 0;
 
         characters.push(

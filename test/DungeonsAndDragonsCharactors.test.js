@@ -23,5 +23,4 @@ contract('DungeonsAndDragonsCharacter', accounts => {
             })
         })
     })
-    // More tests past here
 })  

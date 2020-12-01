@@ -1,0 +1,35 @@
+{
+    "name": "Ari the Witch",
+    "description": "Brilliant spell-slinger and magical with cryptography. Often uses Jewles in his h-index potions. ",
+    "image": "https://ipfs.io/ipfs/QmPMwQtFpEdKrUjpQJfoTeZS1aVSeuJT6Mof7uV29AcUpF?filename=Chainlink_Witch.png",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 43
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 26
+        },
+        {
+            "trait_type": "Constitution",
+            "value": 61
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 74
+        },
+        {
+            "trait_type": "Wisdom",
+            "value": 48
+        },
+        {
+            "trait_type": "Charisma",
+            "value": 70
+        },
+        {
+            "trait_type": "Experience",
+            "value": 0
+        }
+    ]
+}

@@ -20,26 +20,26 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"experience\",\"type\":\"uint256\"}],\"name\":\"updateExperience\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol\":\"IDungeonsAndDragonsCharacter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol\":{\"keccak256\":\"0xa1863be568cbfd668de886c126d8648a4b457740ef8a6df5cb5e8ba7a7b93a11\",\"urls\":[\"bzz-raw://74e78b15c6b7a8f5d45e0c620a07cf7d655881250ad6f386573f4d1cb1b368f9\",\"dweb:/ipfs/QmVXwY4GWQ5E9yUhTZKMqRNEaSvtowH4PMt3EQAcav682D\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"experience\",\"type\":\"uint256\"}],\"name\":\"updateExperience\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/patrick/code/dungeons-and-dragons-nft/contracts/IDungeonsAndDragonsCharacter.sol\":\"IDungeonsAndDragonsCharacter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/patrick/code/dungeons-and-dragons-nft/contracts/IDungeonsAndDragonsCharacter.sol\":{\"keccak256\":\"0xa1863be568cbfd668de886c126d8648a4b457740ef8a6df5cb5e8ba7a7b93a11\",\"urls\":[\"bzz-raw://74e78b15c6b7a8f5d45e0c620a07cf7d655881250ad6f386573f4d1cb1b368f9\",\"dweb:/ipfs/QmVXwY4GWQ5E9yUhTZKMqRNEaSvtowH4PMt3EQAcav682D\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.6;\n\ninterface IDungeonsAndDragonsCharacter {\n    function updateExperience(uint256 tokenId, uint256 experience) external;\n}\n",
-  "sourcePath": "/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol",
+  "sourcePath": "/Users/patrick/code/dungeons-and-dragons-nft/contracts/IDungeonsAndDragonsCharacter.sol",
   "ast": {
-    "absolutePath": "/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol",
+    "absolutePath": "/Users/patrick/code/dungeons-and-dragons-nft/contracts/IDungeonsAndDragonsCharacter.sol",
     "exportedSymbols": {
       "IDungeonsAndDragonsCharacter": [
-        671
+        422
       ]
     },
-    "id": 672,
+    "id": 423,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 663,
+        "id": 414,
         "literals": [
           "solidity",
           "^",
@@ -47,7 +47,7 @@
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:3"
+        "src": "32:23:1"
       },
       {
         "abstract": false,
@@ -56,9 +56,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 671,
+        "id": 422,
         "linearizedBaseContracts": [
-          671
+          422
         ],
         "name": "IDungeonsAndDragonsCharacter",
         "nodeType": "ContractDefinition",
@@ -67,7 +67,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "c5ccb492",
-            "id": 670,
+            "id": 421,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -75,18 +75,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 668,
+              "id": 419,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 665,
+                  "id": 416,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 670,
-                  "src": "128:15:3",
+                  "scope": 421,
+                  "src": "128:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -94,10 +94,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 664,
+                    "id": 415,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "128:7:3",
+                    "src": "128:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -108,13 +108,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 667,
+                  "id": 418,
                   "mutability": "mutable",
                   "name": "experience",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 670,
-                  "src": "145:18:3",
+                  "scope": 421,
+                  "src": "145:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -122,10 +122,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 666,
+                    "id": 417,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "145:7:3",
+                    "src": "145:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -135,39 +135,39 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "127:37:3"
+              "src": "127:37:1"
             },
             "returnParameters": {
-              "id": 669,
+              "id": 420,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "173:0:3"
+              "src": "173:0:1"
             },
-            "scope": 671,
-            "src": "102:72:3",
+            "scope": 422,
+            "src": "102:72:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 672,
-        "src": "57:119:3"
+        "scope": 423,
+        "src": "57:119:1"
       }
     ],
-    "src": "32:145:3"
+    "src": "32:145:1"
   },
   "legacyAST": {
-    "absolutePath": "/Users/patrick/code/dynamic-nft/contracts/IDungeonsAndDragonsCharacter.sol",
+    "absolutePath": "/Users/patrick/code/dungeons-and-dragons-nft/contracts/IDungeonsAndDragonsCharacter.sol",
     "exportedSymbols": {
       "IDungeonsAndDragonsCharacter": [
-        671
+        422
       ]
     },
-    "id": 672,
+    "id": 423,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 663,
+        "id": 414,
         "literals": [
           "solidity",
           "^",
@@ -175,7 +175,7 @@
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "32:23:3"
+        "src": "32:23:1"
       },
       {
         "abstract": false,
@@ -184,9 +184,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 671,
+        "id": 422,
         "linearizedBaseContracts": [
-          671
+          422
         ],
         "name": "IDungeonsAndDragonsCharacter",
         "nodeType": "ContractDefinition",
@@ -195,7 +195,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "c5ccb492",
-            "id": 670,
+            "id": 421,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -203,18 +203,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 668,
+              "id": 419,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 665,
+                  "id": 416,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 670,
-                  "src": "128:15:3",
+                  "scope": 421,
+                  "src": "128:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -222,10 +222,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 664,
+                    "id": 415,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "128:7:3",
+                    "src": "128:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -236,13 +236,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 667,
+                  "id": 418,
                   "mutability": "mutable",
                   "name": "experience",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 670,
-                  "src": "145:18:3",
+                  "scope": 421,
+                  "src": "145:18:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -250,10 +250,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 666,
+                    "id": 417,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "145:7:3",
+                    "src": "145:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -263,26 +263,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "127:37:3"
+              "src": "127:37:1"
             },
             "returnParameters": {
-              "id": 669,
+              "id": 420,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "173:0:3"
+              "src": "173:0:1"
             },
-            "scope": 671,
-            "src": "102:72:3",
+            "scope": 422,
+            "src": "102:72:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 672,
-        "src": "57:119:3"
+        "scope": 423,
+        "src": "57:119:1"
       }
     ],
-    "src": "32:145:3"
+    "src": "32:145:1"
   },
   "compiler": {
     "name": "solc",
@@ -290,7 +290,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-28T01:59:31.757Z",
+  "updatedAt": "2020-10-28T15:56:43.351Z",
   "devdoc": {
     "methods": {}
   },

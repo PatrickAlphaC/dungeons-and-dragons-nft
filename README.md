@@ -1,12 +1,15 @@
 # Chainlink Random Character Creation
 
 This repo is a starting point for creating:
-1. NFTs built with provable RNG using the [Chainlink VRF](https://docs.chain.link/docs/get-a-random-number)
+1. NFTs built with verifiable RNG using the [Chainlink VRF](https://docs.chain.link/docs/get-a-random-number)
 2. Create dynamic NFTs that change based on real world data. [By using decentralized oracles to get data.](https://docs.chain.link/docs/make-a-http-get-request)
+3. Adding your randomized NFTs to the [OpenSea Marketplace](https://opensea.io/)
 
-We will easily create our own NFT on the Rinkeby Chain. We can edit the name of the character in the [`generate-character.js`](./scripts/generate-character.js) script. Right now, the character defaults to "Garfield the Chainlink Warrior". 
+Skip down to [deploy To Opensea](#deploy-to-opensea) - to see how to add a tokenURI
 
-This will create a character with 6 attributes from 0 - 18:
+We will easily create our own NFT on the Rinkeby Chain. We can edit the name of the character in the [`generate-character.js`](./scripts/generate-character.js) script. 
+
+This will create a character with 6 attributes from 0 - 99:
  -   uint256 strength;
  -   uint256 dexterity;
  -   uint256 constitution;
@@ -38,6 +41,7 @@ Then you can get started with:
 ```
 git clone https://github.com/PatrickAlphaC/dungeons-and-dragons-nft
 cd dungeons-and-dragons-nft
+git checkout opensea-update
 npm install
 truffle migrate --reset --network rinkeby
 ```
@@ -68,3 +72,48 @@ truffle run verify DungeonsAndDragonsCharacter --network rinkeby --license MIT
 This will verify and publish your contract, and you can go to the `Read Contract` section of etherscan that it gives you. 
 
 Otherwise, you can use [oneclickdapp](https://oneclickdapp.com/) and just add the contract address and ABI. You can find the ABI in the `build/contracts` folder. Just remember it's not the whole file that is the ABI, just the section that says `ABI`.
+
+
+# Deploy to Opensea
+
+Once we have our NFTs created, we need to give them a `tokenURI`. TokenURIs are the standard for showing the data of NFTs to the world. This makes it easier to store things like images since we don't have to waste the gas of adding them on-chain. 
+
+The [TokenURI](https://eips.ethereum.org/EIPS/eip-721) represents a URL or other unique identifier, and it is an `.json` file with a few parameters.
+
+```
+{
+    "name": "Name for it ",
+    "description": "Anything you want",
+    "image": "https://ipfs.io/ipfs/HASH_HERE?file.png",
+    "attributes": [...]
+}
+```
+
+We are going to be storing these images and meta data in IPFS. You'll need both:
+1. [IPFS](https://ipfs.io/)
+2. [IPFS companion](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch?hl=en)
+3. [Pinata](https://pinata.cloud/pinataupload)
+
+IPFS is a blockchain for storing files. It's free and open sourced, and we can use it to host our tokenURI. The IPFS companion let's us view IPFS data nativly in our browsers like Brave or Chrome. And Pinata allows us to keep our IPFS files up even when our node is down (don't worry about that for now)
+
+Once our IPFS node is up, we can start adding files to it. We first want to upload the image of our NFT. What does this D&D character look like? Add it to your IPFS node and then "Pin" it. Once pinned, you can get the CID of the pinned file, and make sure it stays pinned by pinning it on your Pinata account. Don't worry, it's free! This will just help keep the data up even when our IPFS node is down. 
+
+Once we have the image pinned and up, we can get the link for that image. It'll look a little something like this:
+
+`https://ipfs.io/ipfs/QmTgqnhFBMkfT9s8PHKcdXBn1f5bG3Q5hmBaR4U6hoTvb1?filename=Chainlink_Elf.png`
+
+This is a real link, and if you click it and nothing renders, your IPFS companion might not be working, or your IPFS node is down. 
+
+Once we have our image, we can add it to our metadata `.json` file, and add our stats in there. You can see some samples in the `metadata` folder. We want to use the values of our characters that we got off-chain, so be sure to verify what the random numbers you got on etherscan! Once we have the .json metadata file, we want to add that to IPFS as well, and pin it too!
+
+This metadata json file is going to be our `tokenURI`, so we will modify our `set-token-uri.js` with the `tokenId` of the NFT we are giving a picture to, and adding the ipfs tokenURI.
+
+Then we just run it like:
+
+```
+truffle exec scripts/set-token-uri.js --network mainnet
+```
+
+Now, we can get the address of our NFT and head on over to the opensea testnet marketplace to see if we did it correctly. If done correctly, it'll look [something like this](https://testnets.opensea.io/storefront/dungeonsanddragonscharacter-v6).
+
+[Here is the link for adding your testnet NFT contract to be viewed on opensea.](https://testnets.opensea.io/get-listed/step-two)
