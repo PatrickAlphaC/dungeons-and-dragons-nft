@@ -112,7 +112,7 @@ This metadata json file is going to be our `tokenURI`, so we will modify our `se
 Then we just run it like:
 
 ```
-truffle exec scripts/set-token-uri.js --network mainnet
+truffle exec scripts/set-token-uri.js --network rinkeby
 ```
 
 Now, we can get the address of our NFT and head on over to the opensea testnet marketplace to see if we did it correctly. If done correctly, it'll look [something like this](https://testnets.opensea.io/assets/dungeonsanddragonscharacter-v9).
