@@ -103,7 +103,7 @@ We are going to be storing these images and meta data in IPFS. You'll need both:
 2. [IPFS companion](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch?hl=en)
 3. [Pinata](https://pinata.cloud/pinataupload)
 
-IPFS is a blockchain for storing files. It's free and open sourced, and we can use it to host our tokenURI. The IPFS companion let's us view IPFS data nativly in our browsers like Brave or Chrome. And Pinata allows us to keep our IPFS files up even when our node is down (don't worry about that for now)
+IPFS is a peer to peer network for storing files. It's free and open sourced, and we can use it to host our tokenURI. The IPFS companion let's us view IPFS data nativly in our browsers like Brave or Chrome. And Pinata allows us to keep our IPFS files up even when our node is down (don't worry about that for now)
 
 Once our IPFS node is up, we can start adding files to it. We first want to upload the image of our NFT. What does this D&D character look like? Add it to your IPFS node and then "Pin" it. Once pinned, you can get the CID of the pinned file, and make sure it stays pinned by pinning it on your Pinata account. Don't worry, it's free! This will just help keep the data up even when our IPFS node is down. 
 
