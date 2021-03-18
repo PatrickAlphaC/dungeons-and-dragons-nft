@@ -69,7 +69,7 @@ Depending how often you deploy, you can pick which character by changing the [`d
 
 This will give you the overview of your NFT. You'll see `BN` since the call returns big numbers, you can cast them to ints to see what they are.... Or you could go one step farther
 
-### See it on etherscan or onclickdapp
+### See it on etherscan or oneclickdapp
 
 You can get an [Etherscan API key](https://etherscan.io/apis) for free and interact with the NFTs on chain. Then set `ETHERSCAN_API_KEY ` as an environment variable.
 
