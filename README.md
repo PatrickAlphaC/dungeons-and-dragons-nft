@@ -28,8 +28,16 @@ Right now this repo only works with rinkeby. Run the following.
 ### Setup Environment Variables
 You'll need a `MNEMONIC` and a rinkeby `RINKEBY_RPC_URL` environment variable. Your `MNEMONIC` is your seed phrase of your wallet. You can find an `RINKEBY_RPC_URL` from node provider services like [Infura](https://infura.io/)
 
-Then, either set them in a `bash_profile` file or export them into your terminal like:
+Then, you can create a `.env` file with the following.
 
+```bash
+MNEMONIC='cat dog frog....'
+RINKEBY_RPC_URL='www.infura.io/asdfadsfafdadf'
+```
+
+Or, set them in a `bash_profile` file or export them directly into your terminal. You can learn more about [environment variables here](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html). 
+
+To run them directly in your terminal, run: 
 ```bash
 export MNEMONIC='cat dog frog....'
 export RINKEBY_RPC_URL='www.infura.io/asdfadsfafdadf'
