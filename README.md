@@ -49,7 +49,7 @@ Then you can get started with:
 ```
 git clone https://github.com/PatrickAlphaC/dungeons-and-dragons-nft
 cd dungeons-and-dragons-nft
-npm install
+yarn
 truffle migrate --reset --network rinkeby
 ```
 
@@ -73,7 +73,7 @@ This will give you the overview of your NFT. You'll see `BN` since the call retu
 You can get an [Etherscan API key](https://etherscan.io/apis) for free and interact with the NFTs on chain. Then set `ETHERSCAN_API_KEY ` as an environment variable.
 
 ```bash
-npm install truffle-plugin-verify
+yarn add truffle-plugin-verify
 truffle run verify DungeonsAndDragonsCharacter --network rinkeby --license MIT
 ```
 
