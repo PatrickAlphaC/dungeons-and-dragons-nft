@@ -28,6 +28,6 @@
     "depcheck": "^0.9.1",
     "solhint": "^2.1.0",
     "truffle": "^5.1.5",
-    "truffle-plugin-verify": "^0.4.1"
+    "truffle-plugin-verify": "^0.5.7"
   }
 }
