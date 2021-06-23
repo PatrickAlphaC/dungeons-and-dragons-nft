@@ -56,14 +56,13 @@ contract DungeonsAndDragonsCharacter is ERC721, VRFConsumerBase, Ownable {
     }
 
     function requestNewRandomCharacter(
-        uint256 userProvidedSeed,
         string memory name
     ) public returns (bytes32) {
         require(
             LINK.balanceOf(address(this)) >= fee,
             "Not enough LINK - fill contract with faucet"
         );
-        bytes32 requestId = requestRandomness(keyHash, fee, userProvidedSeed);
+        bytes32 requestId = requestRandomness(keyHash, fee);
         requestToCharacterName[requestId] = name;
         requestToSender[requestId] = msg.sender;
         return requestId;

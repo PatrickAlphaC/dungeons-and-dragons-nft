@@ -15,9 +15,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@chainlink/contracts": "0.0.8",
+    "@chainlink/contracts": "0.1.9",
     "@openzeppelin/contracts": "^3.1.0",
-    "@truffle/hdwallet-provider": "^1.0.40",
+    "@truffle/hdwallet-provider": "1.0.40",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {

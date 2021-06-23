@@ -1,0 +1,35 @@
+{
+    "name": "Chainlink Knight",
+    "description": "Defender against Flash Loan attacks, protector of #Defi protocols. Helping keep the smart contract kingdom secure, reliable, and safe. ",
+    "image": "https://ipfs.io/ipfs/QmZGQA92ri1jfzSu61JRaNQXYg1bLuM7p8YT83DzFA2KLH?filename=Chainlink_Knight.png",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 52
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 55
+        },
+        {
+            "trait_type": "Constitution",
+            "value": 18
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 95
+        },
+        {
+            "trait_type": "Wisdom",
+            "value": 81
+        },
+        {
+            "trait_type": "Charisma",
+            "value": 93
+        },
+        {
+            "trait_type": "Experience",
+            "value": 0
+        }
+    ]
+}

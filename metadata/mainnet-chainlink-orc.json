@@ -1,0 +1,35 @@
+{
+    "name": "Chainlink Orc",
+    "description": "This green tweeting machine is one of the most exciting and excited creatures on the planet. Don't let his looks fool you, he loves to love new technology and help others get involved. Loves watching 'JSON Parser'",
+    "image": "https://ipfs.io/ipfs/QmW1toapYs7M29rzLXTENn3pbvwe8ioikX1PwzACzjfdHP?filename=Chainlink_Orc.png",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 47
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 77
+        },
+        {
+            "trait_type": "Constitution",
+            "value": 16
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 47
+        },
+        {
+            "trait_type": "Wisdom",
+            "value": 95
+        },
+        {
+            "trait_type": "Charisma",
+            "value": 85
+        },
+        {
+            "trait_type": "Experience",
+            "value": 0
+        }
+    ]
+}

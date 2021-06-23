@@ -49,8 +49,7 @@ Then you can get started with:
 ```
 git clone https://github.com/PatrickAlphaC/dungeons-and-dragons-nft
 cd dungeons-and-dragons-nft
-git checkout opensea-update
-npm install
+yarn
 truffle migrate --reset --network rinkeby
 ```
 

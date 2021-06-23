@@ -1,0 +1,35 @@
+{
+    "name": "Chainlink Wizard",
+    "description": "Brilliant spell-slinger and magical with cryptography. Often uses Jewles in her h-index potions. ",
+    "image": "https://ipfs.io/ipfs/QmPMwQtFpEdKrUjpQJfoTeZS1aVSeuJT6Mof7uV29AcUpF?filename=Chainlink_Witch.png",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 52
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 11
+        },
+        {
+            "trait_type": "Constitution",
+            "value": 17
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 85
+        },
+        {
+            "trait_type": "Wisdom",
+            "value": 24
+        },
+        {
+            "trait_type": "Charisma",
+            "value": 54
+        },
+        {
+            "trait_type": "Experience",
+            "value": 0
+        }
+    ]
+}

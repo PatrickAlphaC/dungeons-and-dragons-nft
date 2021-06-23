@@ -1,0 +1,35 @@
+{
+    "name": "Chainlink Elf",
+    "description": "Inspiring, Based, Mythical, Oracle loving creature. Leading the new world and helping teach about superior digital agreements. Also is good with a bow!",
+    "image": "https://ipfs.io/ipfs/QmTgqnhFBMkfT9s8PHKcdXBn1f5bG3Q5hmBaR4U6hoTvb1?filename=Chainlink_Elf.png",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 59
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 29
+        },
+        {
+            "trait_type": "Constitution",
+            "value": 18
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 46
+        },
+        {
+            "trait_type": "Wisdom",
+            "value": 66
+        },
+        {
+            "trait_type": "Charisma",
+            "value": 83
+        },
+        {
+            "trait_type": "Experience",
+            "value": 0
+        }
+    ]
+}
