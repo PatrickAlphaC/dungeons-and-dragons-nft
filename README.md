@@ -73,7 +73,7 @@ This will give you the overview of your NFT. You'll see `BN` since the call retu
 You can get an [Etherscan API key](https://etherscan.io/apis) for free and interact with the NFTs on chain. Then set `ETHERSCAN_API_KEY ` as an environment variable.
 
 ```bash
-npm install truffle-plugin-verify
+yarn add truffle-plugin-verify
 truffle run verify DungeonsAndDragonsCharacter --network rinkeby --license MIT
 ```
 
